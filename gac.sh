@@ -3,19 +3,22 @@
 function gac() {
   
   if [ $# -eq 0 ]; then 
+    echo "------"
     echo "⛔️ Cannot commit without message."
+    echo "⭐️ Need help: gac --help"
+    echo "------"
     return 1
   fi  
 
   if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
     echo "------"
     echo "Semantic reminder:"
-    echo "👉 DOC: d"
-    echo "👉 FIX: f"
-    echo "👉 IMPROVE: i"
-    echo "👉 NEW FEAT: n"
-    echo "👉 RELEASE: r"
-    echo "👉 TEST: t"
+    echo "📖 DOC:       d"
+    echo "🐛 FIX:       f"
+    echo "👌 IMPROVE:   i"
+    echo "✅ NEW FEAT:  n"
+    echo "🚀 RELEASE:   r"
+    echo "🧪 TEST:      t"
     echo "------"
     return 1
   fi  
