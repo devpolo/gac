@@ -1,12 +1,10 @@
 #!/bin/zsh
 
 function gac() {
-  
+
   if [ $# -eq 0 ]; then 
-    echo "------"
-    echo "⛔️ Cannot commit without message."
-    echo "⭐️ Need help: gac --help"
-    echo "------"
+    # res without any word after "gac" command
+    git add -A && git commit -m "🔧 REFACTOR: no comments"
     return 1
   fi  
 
@@ -17,6 +15,7 @@ function gac() {
     echo "🐛 FIX:       f"
     echo "👌 IMPROVE:   i"
     echo "✅ NEW FEAT:  n"
+    echo "🔧 REFACTOR:  null"
     echo "🚀 RELEASE:   r"
     echo "🧪 TEST:      t"
     echo "------"
@@ -51,23 +50,9 @@ function gac() {
   # Test your code
   elif [ "$SEMANTIC" = "t" ]; then 
     SEMANTIC="🧪 TEST:"
- 
-  else
-    echo "ℹ️  info: gac --help"
-    echo "⚠️  You are about to commit without semantic. Continue? [Y/n]"
-    read RESPONSE  
-   
-    RESPONSE=${RESPONSE:l} #tolower
-    if [[ $RESPONSE =~ ^(yes|y| ) ]] || [ -z $RESPONSE ]; then
-      # echo "Trying to commit with message: $SEMANTIC $COMMENT"
-      git add -A && git commit -m "$SEMANTIC $COMMENT"
-      return 1
-    else 
-      echo "Not Commited"
-      return 1
-    fi
   fi
- 
+  
+  # res with or without semantic
   git add -A && git commit -m "$SEMANTIC $COMMENT"
   return 1
 }
