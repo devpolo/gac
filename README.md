@@ -1,6 +1,6 @@
 <h1 align="center"><img src="https://github.com/devpolo/gac/blob/01c3982b752f7acbd0508cf424e53912cfd2a01b/static/gac.svg" alt="ORY Keto - Open Source & Cloud Native Access Control Server"></h1>
 
-# Faster and formated git commits
+# Faster and formatted git commits
 
 A customizable bash function to **format** and **faster** your `git commit -am "message"` command.
 
@@ -13,7 +13,7 @@ A customizable bash function to **format** and **faster** your `git commit -am "
 
 1. Open and past the entire [`gac.sh`](https://github.com/devpolo/gac/blob/master/gac.sh) file (or a [variant](https://github.com/devpolo/gac/tree/master/variant)) at the end of your `~/.zshrc` file.
 2. Restart your terminal.
-3. Enjoy faster and formated `git add` and `git commit` actions.
+3. Enjoy faster and formatted `git add` and `git commit` actions.
 
 ⚠️ **Disclaimer:** tested on macOS only.
 
