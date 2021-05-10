@@ -1,8 +1,9 @@
 #!/bin/zsh
 
 function gac() {
-  
+
   if [ $# -eq 0 ]; then 
+    # res without any word after "gac" command
     git add -A && git commit -m "🔧 REFACTOR: no comments"
     return 1
   fi  
@@ -51,6 +52,7 @@ function gac() {
     SEMANTIC="🧪 TEST:"
   fi
   
+  # res with or without semantic
   git add -A && git commit -m "$SEMANTIC $COMMENT"
   return 1
 }
