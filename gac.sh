@@ -53,7 +53,6 @@ function gac() {
     SEMANTIC="🧪 TEST:"
  
   else
-    # echo ""
     echo "ℹ️  info: gac --help"
     echo "⚠️  You are about to commit without semantic. Continue? [Y/n]"
     read RESPONSE  
@@ -69,7 +68,6 @@ function gac() {
     fi
   fi
  
-  # echo "Trying to commit with message: $SEMANTIC $COMMENT"
   git add -A && git commit -m "$SEMANTIC $COMMENT"
   return 1
 }
