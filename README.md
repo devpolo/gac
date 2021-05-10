@@ -30,6 +30,9 @@ git commit -m "📖 DOC: edit readme file"
 ## Available commands
 
 ```bash
+gac
+# 🔧 REFACTOR: no comments
+
 gac d <your message>
 # 📖 DOC: <your message>
 
