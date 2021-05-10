@@ -9,6 +9,7 @@ function gac() {
   fi  
 
   if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    # gac -h or --help, displays help
     echo "------"
     echo "Semantic reminder:"
     echo "📖 DOC:       d"
