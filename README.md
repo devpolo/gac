@@ -1,6 +1,6 @@
 <h1 align="center"><img src="static/gac.svg" alt="ORY Keto - Open Source & Cloud Native Access Control Server"></h1>
 
-# Faster and formatted git commits
+# format and faster your git commits
 
 A customizable bash function to **format** and **faster** your `git commit -am "message"` command.
 
