@@ -1,4 +1,4 @@
-<h1 align="center"><img src="" alt="ORY Keto - Open Source & Cloud Native Access Control Server"></h1>
+<h1 align="center"><img src="https://github.com/devpolo/gac/blob/01c3982b752f7acbd0508cf424e53912cfd2a01b/static/gac.svg" alt="ORY Keto - Open Source & Cloud Native Access Control Server"></h1>
 
 # Faster and formated git commits
 
