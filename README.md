@@ -6,7 +6,7 @@ A customizable bash function to faster and format your `git commit -am "message"
 
 ## Install
 
-1. Open and past the entire `gac.sh` file content at the end of your `~/.zshrc` file.
+1. Open and past the entire [`gac.sh`](https://github.com/devpolo/gac/blob/092d02a62a391f4f5818570a469fdd18e95deca3/gac.sh) file content at the end of your `~/.zshrc` file.
 2. restart your terminal.
 3. Enjoy faster and formated git add and git commit actions.
 
