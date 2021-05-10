@@ -11,9 +11,9 @@ A customizable bash function to faster and format your `git commit -am "message"
 
 ## Quickstart
 
-1. Open and past the entire [`gac.sh`](https://github.com/devpolo/gac/blob/master/gac.sh) file content at the end of your `~/.zshrc` file.
+1. Open and past the entire [`gac.sh`](https://github.com/devpolo/gac/blob/master/gac.sh) file (or a [variant](https://github.com/devpolo/gac/tree/master/variant)) at the end of your `~/.zshrc` file.
 2. restart your terminal.
-3. Enjoy faster and formated git add and git commit actions.
+3. Enjoy faster and formated `git add` and `git commit` actions.
 
 **Disclaimer:** tested on macOS only.
 
