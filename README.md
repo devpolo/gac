@@ -42,6 +42,9 @@ gac r <your message>
 
 gac t <your message>
 # 🧪 TEST: <your message>
+
+gac <your message> # to avoid pre-formated message
+# <your message>
 ```
 
 ## Thanks
