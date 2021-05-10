@@ -56,6 +56,8 @@ gac <your message> # to avoid pre-formated message
 
 [Inspirerd by Lenar Hoyt stackoverflow post](https://stackoverflow.com/a/45612441/11692562)
 
+[How to Open Source Like a Pro, Ben Awad's video](https://youtu.be/MT6M_sqAuZo?t=467)
+
 [Graphical charter inspired by Ory](https://github.com/ory)
 
 [Header icon licence](https://icons8.com/license)
