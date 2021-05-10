@@ -4,7 +4,12 @@
 
 A customizable bash function to faster and format your `git commit -am "message"` command.
 
-## Install
+## Contributions
+
+1. Give this project a ⭐️
+2. Pull requests and issues are most welcome
+
+## Quickstart
 
 1. Open and past the entire [`gac.sh`](https://github.com/devpolo/gac/blob/master/gac.sh) file content at the end of your `~/.zshrc` file.
 2. restart your terminal.
