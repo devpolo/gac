@@ -2,13 +2,15 @@
 
 # Faster and formated git commits
 
-A customizable bash function to simplify and format your `git commit -am "message"` command.
+A customizable bash function to faster and format your `git commit -am "message"` command.
 
 ## Install
 
-1. Open and past the entire `gac.sh` file content at the end of your `~/.zshrc` file:
-2. restart your terminal
-3. Enjoy easy formated add and commit
+1. Open and past the entire `gac.sh` file content at the end of your `~/.zshrc` file.
+2. restart your terminal.
+3. Enjoy faster and formated git add and git commit actions.
+
+**Disclaimer:** tested on macOS only.
 
 ## Exemple
 
@@ -44,8 +46,8 @@ gac t <your message>
 
 ## Thanks
 
-[Inspirerd by Lenar Hoyt on stackoverflow](https://stackoverflow.com/a/45612441/11692562)
+[Inspirerd by Lenar Hoyt stackoverflow post](https://stackoverflow.com/a/45612441/11692562)
 
-[Ory graphical charter](https://github.com/ory)
+[Graphical charter inspired by Ory](https://github.com/ory)
 
 [Header icon licence](https://icons8.com/license)
