@@ -54,8 +54,8 @@ gac <your message> # to avoid pre-formated message
 
 ## Thanks
 
-<a href="https://stackoverflow.com/a/45612441/11692562" target="_blank">Inspirerd by Lenar Hoyt stackoverflow post</a>
+[Inspirerd by Lenar Hoyt stackoverflow post](https://stackoverflow.com/a/45612441/11692562)
 
-<a href="https://github.com/ory" target="_blank">Graphical charter inspired by Ory</a>
+[Graphical charter inspired by Ory](https://github.com/ory)
 
-<a href="https://icons8.com/license" target="_blank">Header icon licence</a>
+[Header icon licence](https://icons8.com/license)
