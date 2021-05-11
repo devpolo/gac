@@ -15,7 +15,7 @@ function gac() {
     echo "🪚 REFACTOR:      r" 
     echo "🎨 STYLE:         s"
     echo "🧪 TEST:          t"
-    echo "🛠 WORKING ON:    w"
+    echo "🛠  WORKING ON:    w"
     echo "------"
     return 1
   fi  
@@ -59,7 +59,7 @@ function gac() {
 
   # Working on a feature
   elif [ "$SHORTCUT" = "w" ]; then 
-    SHORTCUT="🛠 WORKING ON:"
+    SHORTCUT="🛠  WORKING ON:"
   fi
   
   # res with or without semantic
