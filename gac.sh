@@ -27,39 +27,39 @@ function gac() {
 
   # Fix a bug
   if [ "$SHORTCUT" = "b" ]; then
-    SHORTCUT="🐛 BUG FIX: "
+    SHORTCUT="🐛 BUG FIX:"
 
   # Write or edit existing documentation
   elif [ "$SHORTCUT" = "d" ]; then
-    SHORTCUT="📖 DOCS: "
+    SHORTCUT="📖 DOCS:"
 
   # Add new feature
   elif [ "$SHORTCUT" = "f" ]; then
-    SHORTCUT="➕ FEAT: "
+    SHORTCUT="➕ FEAT:"
 
   # Deploy in production
   elif [ "$SHORTCUT" = "n" ]; then
-    SHORTCUT="🚀 NEW REALSE: "
+    SHORTCUT="🚀 NEW REALSE:"
   
   # Improve your code base
   elif [ "$SHORTCUT" = "i" ]; then
-    SHORTCUT="👌 IMPROVE: "
+    SHORTCUT="👌 IMPROVE:"
 
   # Refator your code base
   elif [ "$SHORTCUT" = "r" ]; then
-    SHORTCUT="🔧 REFACTOR: "
+    SHORTCUT="🔧 REFACTOR:"
 
   # Styling actions
   elif [ "$SHORTCUT" = "s" ]; then 
-    SHORTCUT="🎨 STYLE: "
+    SHORTCUT="🎨 STYLE:"
 
   # Test your code
   elif [ "$SHORTCUT" = "t" ]; then 
-    SHORTCUT="🧪 TEST: "
+    SHORTCUT="🧪 TEST:"
 
   # Working on a feature
   elif [ "$SHORTCUT" = "w" ]; then 
-    SHORTCUT="⚙️  WORKING ON: "
+    SHORTCUT="⚙️  WORKING ON:"
   fi
   
   # res with or without semantic
