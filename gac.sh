@@ -2,58 +2,67 @@
 
 function gac() {
 
-  if [ $# -eq 0 ]; then 
-    # res without any word after "gac" command
-    git add -A && git commit -m "🔧 REFACTOR: no comments"
-    return 1
-  fi  
-
-  if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-    # gac -h or --help, displays help
+  if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    # displays help with
+    # gac | gac -h | gac --help
     echo "------"
-    echo "Semantic reminder:"
-    echo "📖 DOC:       d"
-    echo "🐛 FIX:       f"
-    echo "👌 IMPROVE:   i"
-    echo "✅ NEW FEAT:  n"
-    echo "🔧 REFACTOR:  null"
-    echo "🚀 RELEASE:   r"
-    echo "🧪 TEST:      t"
+    echo "Cannot commit without comments. Semantic reminder:"
+    echo "🐛 BUG FIX:       b" 
+    echo "📖 DOCS:          d" 
+    echo "➕ FEAT:          f" 
+    echo "🚀 NEW REALSE:    n" 
+    echo "👌 IMPROVE:       i"
+    echo "🔧 REFACTOR:      r" 
+    echo "🎨 STYLE:         s"
+    echo "🧪 TEST:          t"
+    echo "⚙️  WORKING ON:    w"
     echo "------"
     return 1
   fi  
 
-
-  SEMANTIC=$1
+  SHORTCUT=$1
   shift ;
   COMMENT=$@
 
-  # Write or edit existing documentation
-  if [ "$SEMANTIC" = "d" ]; then
-    SEMANTIC="📖 DOC:"
 
   # Fix a bug
-  elif [ "$SEMANTIC" = "f" ]; then
-    SEMANTIC="🐛 FIX:"
+  if [ "$SHORTCUT" = "b" ]; then
+    SHORTCUT="🐛 BUG FIX: "
+
+  # Write or edit existing documentation
+  elif [ "$SHORTCUT" = "d" ]; then
+    SHORTCUT="📖 DOCS: "
+
+  # Add new feature
+  elif [ "$SHORTCUT" = "f" ]; then
+    SHORTCUT="➕ FEAT: "
+
+  # Deploy in production
+  elif [ "$SHORTCUT" = "n" ]; then
+    SHORTCUT="🚀 NEW REALSE: "
   
+  # Improve your code base
+  elif [ "$SHORTCUT" = "i" ]; then
+    SHORTCUT="👌 IMPROVE: "
+
   # Refator your code base
-  elif [ "$SEMANTIC" = "i" ]; then
-    SEMANTIC="👌 IMPROVE:"
+  elif [ "$SHORTCUT" = "r" ]; then
+    SHORTCUT="🔧 REFACTOR: "
 
-  # Add new features
-  elif [ "$SEMANTIC" = "n" ]; then
-    SEMANTIC="✅ NEW FEAT:"
-
-  # Ready for production
-  elif [ "$SEMANTIC" = "r" ]; then 
-    SEMANTIC="🚀 RELEASE:"
+  # Styling actions
+  elif [ "$SHORTCUT" = "s" ]; then 
+    SHORTCUT="🎨 STYLE: "
 
   # Test your code
-  elif [ "$SEMANTIC" = "t" ]; then 
-    SEMANTIC="🧪 TEST:"
+  elif [ "$SHORTCUT" = "t" ]; then 
+    SHORTCUT="🧪 TEST: "
+
+  # Working on a feature
+  elif [ "$SHORTCUT" = "w" ]; then 
+    SHORTCUT="⚙️  WORKING ON: "
   fi
   
   # res with or without semantic
-  git add -A && git commit -m "$SEMANTIC $COMMENT"
+  git add -A && git commit -m "$SHORTCUT $COMMENT"
   return 1
 }

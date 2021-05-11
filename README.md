@@ -26,42 +26,48 @@ A customizable bash function to **format** and **faster** your `git commit -am "
 ## Exemple
 
 ```bash
-gac d improve readme
+gac n final version
 
 # equals to:
 git add -A
-git commit -m "📖 DOC: improve readme"
+git commit -m "🚀 NEW RELEASE: final version"
 ```
 
 ## Available commands
 
 ```bash
-gac
-# 🔧 REFACTOR: no comments
+gac # or -h or --help
+# print all available semantics
+
+gac b <your message>
+# 🐛 BUG FIX: <your message>
 
 gac d <your message>
-# 📖 DOC: <your message>
+# 📖 DOCS: <your message>
 
 gac f <your message>
-# 🐛 FIX: <your message>
+# ➕ FEAT: <your message>
+
+gac n <your message>
+# 🚀 NEW RELEASE: <your message>
 
 gac i <your message>
 # 👌 IMPROVE: <your message>
 
-gac n <your message>
-# ✅ NEW FEAT: <your message>
-
 gac r <your message>
-# 🚀 RELEASE: <your message>
+# 🔧 REFACTOR: <your message>
+
+gac s <your message>
+# 🎨 STYLE: <your message>
 
 gac t <your message>
 # 🧪 TEST: <your message>
 
+gac w <your message>
+# ⚙️  WORKING ON: <your message>
+
 gac <your message>
 # <your message>
-
-gac -h # or --help
-# print all available semantics
 ```
 
 ## Thanks
