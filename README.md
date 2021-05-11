@@ -55,7 +55,7 @@ gac i <your message>
 # 👌 IMPROVE: <your message>
 
 gac r <your message>
-# 🔧 REFACTOR: <your message>
+# 🪚 REFACTOR: <your message>
 
 gac s <your message>
 # 🎨 STYLE: <your message>
@@ -64,7 +64,7 @@ gac t <your message>
 # 🧪 TEST: <your message>
 
 gac w <your message>
-# ⚙️  WORKING ON: <your message>
+# 🛠 WORKING ON: <your message>
 
 gac <your message>
 # <your message>

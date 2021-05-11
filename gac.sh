@@ -12,10 +12,10 @@ function gac() {
     echo "➕ FEAT:          f" 
     echo "🚀 NEW REALSE:    n" 
     echo "👌 IMPROVE:       i"
-    echo "🔧 REFACTOR:      r" 
+    echo "🪚 REFACTOR:      r" 
     echo "🎨 STYLE:         s"
     echo "🧪 TEST:          t"
-    echo "⚙️  WORKING ON:    w"
+    echo "🛠 WORKING ON:    w"
     echo "------"
     return 1
   fi  
@@ -47,7 +47,7 @@ function gac() {
 
   # Refator your code base
   elif [ "$SHORTCUT" = "r" ]; then
-    SHORTCUT="🔧 REFACTOR:"
+    SHORTCUT="🪚 REFACTOR:"
 
   # Styling actions
   elif [ "$SHORTCUT" = "s" ]; then 
@@ -59,7 +59,7 @@ function gac() {
 
   # Working on a feature
   elif [ "$SHORTCUT" = "w" ]; then 
-    SHORTCUT="⚙️  WORKING ON:"
+    SHORTCUT="🛠 WORKING ON:"
   fi
   
   # res with or without semantic
