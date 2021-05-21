@@ -19,9 +19,13 @@ A customizable bash function to **format** and **faster** your `git commit -am "
 4. Restart your terminal.
 5. Enjoy faster and formatted `git add` and `git commit` actions.
 
-### Linux / Windows
+### Linux
 
-⚠️ tested on macOS only. **Pull requests are welcome**.
+Same as [macOS](#macos), but use `~/.profile` file instead.
+
+### Windows
+
+⚠️ Not tested on Windows yet. **Pull requests are welcome**.
 
 ## Exemple
 
