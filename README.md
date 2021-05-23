@@ -2,7 +2,9 @@
 
 # Format and faster your git commit
 
-A customizable bash function to **format** and **faster** your `git commit -am "message"` command. For exemple:
+A customizable bash function to **format** and **faster** your `git commit -am "message"` command.
+
+## Exemple
 
 ```bash
 gac n final version
