@@ -23,11 +23,11 @@ A customizable bash function to **format** and **faster** your `git commit -am "
 
 ### Linux
 
-Same as [macOS](#macos), but use `~/.profile` file instead.
+Work the same as [macOS](#macos). Use `~/.profile` file instead.
 
 ### Windows
 
-⚠️ Not tested on Windows yet. **Pull requests are welcome**.
+⚠️ Not tested on Windows yet but should work the same as [Linux](#linux) if you are using Git Bash. **Pull requests are welcome**.
 
 ## Exemple
 
