@@ -2,7 +2,15 @@
 
 # Format and faster your git commit
 
-A customizable bash function to **format** and **faster** your `git commit -am "message"` command.
+A customizable bash function to **format** and **faster** your `git commit -am "message"` command. For exemple:
+
+```bash
+gac n final version
+
+# equals to:
+git add -A
+git commit -m "🚀 NEW RELEASE: final version"
+```
 
 ## Contributions
 
@@ -28,16 +36,6 @@ Work the same as [macOS](#macos). Use `~/.profile` file instead.
 ### Windows
 
 ⚠️ Not tested on Windows yet but should work the same as [Linux](#linux) if you are using Git Bash. **Pull requests are welcome**.
-
-## Exemple
-
-```bash
-gac n final version
-
-# equals to:
-git add -A
-git commit -m "🚀 NEW RELEASE: final version"
-```
 
 ## Available commands
 
