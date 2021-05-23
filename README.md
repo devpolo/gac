@@ -13,11 +13,13 @@ A customizable bash function to **format** and **faster** your `git commit -am "
 
 ### macOS
 
-1. You need a `~/.zshrc` file.
-2. Open it: `vim ~/.zshrc` or create it: `touch ~/.zshrc && vim ~/.zshrc`.
-3. Past the entire [`gac.sh`](gac.sh) file (or a [variant](variant)) at the end of your `~/.zshrc` file.
-4. Restart your terminal.
-5. Enjoy faster and formatted `git add` and `git commit` actions.
+1. You need a `~/.zshrc` file
+2. Open or create it: `vim ~/.zshrc`
+3. Enter insert mode: `i`
+4. Past the entire [`gac.sh`](gac.sh) file (or a [variant](variant)) at the end of your `~/.zshrc` file
+5. Exit vim: `:wq`
+6. Restart your terminal
+7. Enjoy faster and formatted `git add` and `git commit` actions
 
 ### Linux
 
