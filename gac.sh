@@ -11,7 +11,7 @@ function gac() {
     echo "📦 CHORE:         c" 
     echo "📖 DOCS:          d" 
     echo "✅ FEAT:          f" 
-    echo "🚀 NEW REALSE:    n" 
+    echo "🚀 NEW RELEASE:   n" 
     echo "👌 IMPROVE:       i"
     echo "🪚 REFACTOR:      r" 
     echo "🎨 STYLE:         s"
@@ -44,7 +44,7 @@ function gac() {
 
   # Deploy in production
   elif [ "$SHORTCUT" = "n" ]; then
-    SHORTCUT="🚀 NEW REALSE:"
+    SHORTCUT="🚀 NEW RELEASE:"
   
   # Improve your code base
   elif [ "$SHORTCUT" = "i" ]; then
