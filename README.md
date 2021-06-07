@@ -81,9 +81,9 @@ gac <your message>
 
 ## Thanks
 
-[Inspirerd by Lenar Hoyt's stackoverflow post](https://stackoverflow.com/a/45612441/11692562)
+[Inspired by Lenar Hoyt's stackoverflow post](https://stackoverflow.com/a/45612441/11692562)
 
-[Inspirerd by the the Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
+[Inspired by the the Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
 [How to Open Source Like a Pro, Ben Awad's video](https://youtu.be/MT6M_sqAuZo?t=467)
 
