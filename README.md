@@ -90,7 +90,3 @@ gac <your message>
 [Graphical charter inspired by Ory](https://github.com/ory)
 
 [Header icon licence](https://icons8.com/license)
-
-<!-- GitHub About Description
-One simple command to format and faster your git add and git commit actions.
--->
