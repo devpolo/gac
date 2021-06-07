@@ -55,7 +55,7 @@ gac d <your message>
 # 📖 DOCS: <your message>
 
 gac f <your message>
-# ➕ FEAT: <your message>
+# ✅ FEAT: <your message>
 
 gac n <your message>
 # 🚀 NEW RELEASE: <your message>
