@@ -14,7 +14,7 @@
         </g>
     </g>
     <g transform="matrix(1,0,0,1,66.568,-82)">
-        <text x="353px" y="260px" style="font-family:'HelveticaNeue-Light', 'Helvetica Neue';font-weight:300;font-size:24px;fill:rgb(124,83,255);">format and faster your git commits</text>
+        <text x="353px" y="260px" style="font-family:'HelveticaNeue-Light', 'Helvetica Neue';font-weight:300;font-size:24px;fill:rgb(124,83,255);">format and faster your commits</text>
     </g>
     <defs>
         <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1000,0,0,300,0,0)"><stop offset="0" style="stop-color:white;stop-opacity:1"/><stop offset="0.63" style="stop-color:rgb(234,228,255);stop-opacity:0.88"/><stop offset="0.83" style="stop-color:rgb(181,158,255);stop-opacity:0.57"/><stop offset="1" style="stop-color:rgb(122,80,255);stop-opacity:0.23"/></linearGradient>
