@@ -8,6 +8,7 @@ function gac() {
     echo "------"
     echo "Cannot commit without comments. Semantic reminder:"
     echo "🐛 BUG FIX:       b" 
+    echo "📦 CHORE:         c" 
     echo "📖 DOCS:          d" 
     echo "➕ FEAT:          f" 
     echo "🚀 NEW REALSE:    n" 
@@ -28,6 +29,10 @@ function gac() {
   # Fix a bug
   if [ "$SHORTCUT" = "b" ]; then
     SHORTCUT="🐛 BUG FIX:"
+
+  # Chore
+  elif [ "$SHORTCUT" = "c" ]; then
+    SHORTCUT="📦 CHORE:"
 
   # Write or edit existing documentation
   elif [ "$SHORTCUT" = "d" ]; then
