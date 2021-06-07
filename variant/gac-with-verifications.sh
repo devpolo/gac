@@ -10,7 +10,7 @@ function gac() {
     echo "🐛 BUG FIX:       b" 
     echo "📦 CHORE:         c" 
     echo "📖 DOCS:          d" 
-    echo "➕ FEAT:          f" 
+    echo "✅ FEAT:          f" 
     echo "🚀 NEW REALSE:    n" 
     echo "👌 IMPROVE:       i"
     echo "🪚 REFACTOR:      r" 
@@ -40,7 +40,7 @@ function gac() {
 
   # Add new feature
   elif [ "$SHORTCUT" = "f" ]; then
-    SHORTCUT="➕ FEAT:"
+    SHORTCUT="✅ FEAT:"
 
   # Deploy in production
   elif [ "$SHORTCUT" = "n" ]; then
