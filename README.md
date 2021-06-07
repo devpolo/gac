@@ -42,8 +42,8 @@ Work the same as [macOS](#macos). Use `~/.profile` file instead.
 ## Available commands
 
 ```bash
-gac # or -h or --help
-# print all available semantics
+gac
+# print available semantics
 
 gac b <your message>
 # 🐛 BUG FIX: <your message>
