@@ -48,6 +48,9 @@ gac # or -h or --help
 gac b <your message>
 # 🐛 BUG FIX: <your message>
 
+gac c <your message>
+# 📦 CHORE: <your message>
+
 gac d <your message>
 # 📖 DOCS: <your message>
 
