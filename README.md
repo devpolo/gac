@@ -4,7 +4,7 @@
 
 A customizable bash function to **format** and **faster** your `git commit -am "message"` command.
 
-## Exemple
+## Example
 
 ```bash
 gac n final version
