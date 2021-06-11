@@ -1,9 +1,8 @@
 
-# gac fucntion
 function gac {
     if($args.length -eq 0 -or $args[0] -eq "--help" -or $args[0] -eq "-h") {
-        Print-Gac-Help |
-            ForEach {[PSCustomObject]$_} | 
+        PrintGacHelp |
+            ForEach-Object {[PSCustomObject]$_} | 
             Format-Table -Property @{ e="Command"; width = 30 }, "Commit Message"
         return $null;
     }
@@ -28,8 +27,8 @@ function gac {
 }
 
 # Help fucntion to print all available gac commands
-function Print-Gac-Help {
-    echo "Available gac commands"
+function PrintGacHelp {
+    Write-Output "Available gac commands"
 
     $all_commands = @(
         @{"Commit Message"=[char]::ConvertFromUtf32(0x1F41B) + " BUG FIX"; Command="b"}
