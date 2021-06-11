@@ -31,16 +31,16 @@ function PrintGacHelp {
     Write-Output "Available gac commands"
 
     $all_commands = @(
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F41B) + " BUG FIX"; Command="b"}
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F4E6) + " CHORE"; Command="c"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F4D6) + " DOCS"; Command="d"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x2705) + " FEAT"; Command="f"} 	
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F680) + " NEW RELEASE"; Command="n"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F44C) + " IMPROVE"; Command="i"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x2699) + " REFACTOR"; Command="r"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F3A8) + " STYLE"; Command="s"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F9EA) + " TEST"; Command="t"} 
-        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F6E0) + " WORKING ON"; Command="w"} 
+        @{Command="gac b <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F41B) + " BUG FIX: <your message>"}
+        @{Command="gac c <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F4E6) + " CHORE: <your message>"} 
+        @{Command="gac d <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F4D6) + " DOCS: <your message>"} 
+        @{Command="gac f <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x2705) + " FEAT: <your message>"} 	
+        @{Command="gac n <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F680) + " NEW RELEASE: <your message>"} 
+        @{Command="gac i <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F44C) + " IMPROVE: <your message>"} 
+        @{Command="gac r <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x2699) + " REFACTOR: <your message>"} 
+        @{Command="gac s <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F3A8) + " STYLE: <your message>"} 
+        @{Command="gac t <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F9EA) + " TEST: <your message>"} 
+        @{Command="gac w <your message>"; "Commit Message"=[char]::ConvertFromUtf32(0x1F6E0) + " WORKING ON: <your message>"} 
     )
 
     return $all_commands
