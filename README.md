@@ -35,9 +35,13 @@ git commit -m "🚀 NEW RELEASE: final version"
 
 Work the same as [macOS](#macos). Use `~/.profile` file instead.
 
-### Windows
+### Windows (only in Powershell)
 
-⚠️ Not tested on Windows yet but should work the same as [Linux](#linux) if you are using Git Bash. **Pull requests are welcome**.
+1. Run your PowerShell as administrator 
+2. Give access to external script: `Set-ExecutionPolicy Unrestricted`
+3. Go to Powershell Home Directory `cd $PSHOME` or `cd C:\Windows\System32\WindowsPowerShell\v1.0`
+4. Open explorer in $PSHOME `start .`
+5. Copy `Profile.ps1` file or paste the `Profile.ps1` contents if it already exists.
 
 ## Available commands
 
