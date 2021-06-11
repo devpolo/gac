@@ -9,16 +9,16 @@ function gac {
     }
 
     $commit_msg = switch ($args[0]) {
-        "b" { "🐛 BUG FIX: " + $args[1..($args.length-1)] }
-        "c" { "📦 CHORE: " + $args[1..($args.length-1)] }
-        "d" { "📖 DOCS: " + $args[1..($args.length-1)] }
-        "f" { "✅ FEAT: " + $args[1..($args.length-1)] }
-        "n" { "🚀 NEW RELEASE: " + $args[1..($args.length-1)] }
-        "i" { "👌 IMPROVE: " + $args[1..($args.length-1)] }
-        "r" { "🥈 REFACTOR: " + $args[1..($args.length-1)] }
-        "s" { "🎨 STYLE: " + $args[1..($args.length-1)] }
-        "t" { "🧪 TEST: " + $args[1..($args.length-1)] }
-        "w" { "🛠 WORKING ON: " + $args[1..($args.length-1)] }
+        "b" { [char]::ConvertFromUtf32(0x1F41B) + " BUG FIX: " + $args[1..($args.length-1)] }
+        "c" { [char]::ConvertFromUtf32(0x1F4E6) + " CHORE: " + $args[1..($args.length-1)] }
+        "d" { [char]::ConvertFromUtf32(0x1F4D6) + " DOCS: " + $args[1..($args.length-1)] }
+        "f" { [char]::ConvertFromUtf32(0x2705) + " FEAT: " + $args[1..($args.length-1)] }
+        "n" { [char]::ConvertFromUtf32(0x1F680) + " NEW RELEASE: " + $args[1..($args.length-1)] }
+        "i" { [char]::ConvertFromUtf32(0x1F44C) + " IMPROVE: " + $args[1..($args.length-1)] }
+        "r" { [char]::ConvertFromUtf32(0x2699) + " REFACTOR: " + $args[1..($args.length-1)] }
+        "s" { [char]::ConvertFromUtf32(0x1F3A8) + " STYLE: " + $args[1..($args.length-1)] }
+        "t" { [char]::ConvertFromUtf32(0x1F9EA) + " TEST: " + $args[1..($args.length-1)] }
+        "w" { [char]::ConvertFromUtf32(0x1F6E0) + " WORKING ON: " + $args[1..($args.length-1)] }
         default { "" + $args }
     }
 
@@ -32,17 +32,16 @@ function Print-Gac-Help {
     echo "Available gac commands"
 
     $all_commands = @(
-        @{Command="gac b <you message>"; "Commit Message"="🐛 BUG FIX: <you message>"}
-        @{Command="gac c <you message>"; "Commit Message"="📦 CHORE: <you message>"}
-        @{Command="gac d <you message>"; "Commit Message"="📖 DOCS: <you message>"}
-        @{Command="gac f <you message>"; "Commit Message"="✅ FEAT: <you message>"}
-        @{Command="gac n <you message>"; "Commit Message"="🚀 NEW RELEASE: <you message>"}
-        @{Command="gac i <you message>"; "Commit Message"="👌 IMPROVE: <you message>"}
-        @{Command="gac r <you message>"; "Commit Message"="🥈 REFACTOR: <you message>"}
-        @{Command="gac s <you message>"; "Commit Message"="🎨 STYLE: <you message>"}
-        @{Command="gac t <you message>"; "Commit Message"="🧪 TEST: <you message>"}
-        @{Command="gac w <you message>"; "Commit Message"="🛠 WORKING ON: <you message>"}
-        @{Command="gac <you message>"; "Commit Message"="<you message>"}
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F41B) + " BUG FIX"; Command="b"}
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F4E6) + " CHORE"; Command="c"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F4D6) + " DOCS"; Command="d"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x2705) + " FEAT"; Command="f"} 	
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F680) + " NEW RELEASE"; Command="n"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F44C) + " IMPROVE"; Command="i"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x2699) + " REFACTOR"; Command="r"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F3A8) + " STYLE"; Command="s"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F9EA) + " TEST"; Command="t"} 
+        @{"Commit Message"=[char]::ConvertFromUtf32(0x1F6E0) + " WORKING ON"; Command="w"} 
     )
 
     return $all_commands
