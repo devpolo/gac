@@ -1,4 +1,4 @@
-<h1 align="center"><img src="static/gac.svg" alt="format and faster your commits"></h1>
+![format and faster your commits](static/gac.svg "format and faster your commits")
 
 # Format and faster your git commit
 
@@ -37,7 +37,7 @@ Work the same as [macOS](#macos). Use `~/.profile` file instead.
 
 ### Windows (only in Powershell)
 
-1. Run your PowerShell as administrator 
+1. Run your PowerShell as administrator
 2. Give access to external script: `Set-ExecutionPolicy Unrestricted`
 3. Go to Powershell Home Directory `cd $PSHOME` or `cd C:\Windows\System32\WindowsPowerShell\v1.0`
 4. Open explorer in $PSHOME `start .`
