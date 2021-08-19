@@ -1,4 +1,4 @@
-<h1 align="center"><img src="static/gac.svg" alt="ORY Keto - Open Source & Cloud Native Access Control Server"></h1>
+<h1 align="center"><img src="static/gac.svg" alt="format and faster your commits"></h1>
 
 # Format and faster your git commit
 
