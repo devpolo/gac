@@ -17,7 +17,7 @@ help:
 
 all: ## execute a fully gac command
 	@echo "$(OK_COLOR)command:$(NO_COLOR)"
-	@echo gac f descriptions -s scope -b body -bc breaking change
+	@echo gac f description -s scope -b body -bc breaking change
 	@echo
 	@echo "$(OK_COLOR)return:$(NO_COLOR)"
 	@$(GAC) f $(DESC) -s $(SCOPE) -b $(BODY) -bc $(BREAKING_CHANGE)
@@ -25,6 +25,8 @@ all: ## execute a fully gac command
 type: ## gac with type
 	$(GAC) f chore add ts support
 
+alias: ## for dev purpose, print temporary gac alias
+	@echo alias gac=\"$(GAC)\"
 
 gac: ## gac shortcut
 	$(GAC) $(filter-out $@,$(MAKECMDGOALS))
