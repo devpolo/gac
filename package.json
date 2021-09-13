@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:devpolo/gac.git",
   "author": "devpolo <paul@crussaire.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^8.2.0"
+  }
 }
