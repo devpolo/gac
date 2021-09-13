@@ -1,0 +1,9 @@
+{
+  "name": "gac",
+  "version": "0.3",
+  "description": "One simple command to format and faster your git add and git commit actions",
+  "main": "index.js",
+  "repository": "git@github.com:devpolo/gac.git",
+  "author": "devpolo <paul@crussaire.com>",
+  "license": "MIT"
+}
