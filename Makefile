@@ -22,14 +22,5 @@ all: ## execute a fully gac command
 	@echo "$(OK_COLOR)return:$(NO_COLOR)"
 	@$(GAC) f $(DESC) -s $(SCOPE) -b $(BODY) -bc $(BREAKING_CHANGE)
 
-type: ## gac with type
-	$(GAC) f chore add ts support
-
 alias: ## for dev purpose, print temporary gac alias
 	@echo alias gac=\"$(GAC)\"
-
-gac: ## gac shortcut
-	$(GAC) $(filter-out $@,$(MAKECMDGOALS))
-
-%:
-  @:
