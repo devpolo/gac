@@ -20,6 +20,7 @@ Options:
   -s, --scope <scope>                 optional scope
   -b, --body <body...>                optional body
   -bc, --breaking-change [bc...]      optional breaking change
+  -b, --reference <reference...>      optional reference
   -h, --help                          display help for command
 
 Examples:
@@ -45,6 +46,7 @@ program
     "-bc, --breaking-change [breaking-change...]",
     "optional breaking change"
   )
+  .option("-r, --reference <reference>", "optional reference")
   .action((type, descriptions) => {
     if (!type) return printError("no type")
     if (type && !descriptions?.length) return printError("no descriptions")
@@ -89,7 +91,9 @@ program
 
     res = `${typeAndScope}${
       options?.breakingChange ? "!" : ""
-    }: ${description}${body}${breakingChange}`
+    }: ${description}${body}${breakingChange}${
+      options?.reference ? "\n\n#" + options?.reference : ""
+    }`
 
     console.log(res)
   })
