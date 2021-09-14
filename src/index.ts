@@ -25,12 +25,18 @@ Options:
 
 Examples:
   gac f create button 
-  ${greenColor("equals to:")} git add -A && git commit -m "feat: create button"
+  ${greenColor("equals to:")} 
+  ${greenColor("|")} git add -A && git commit -m "feat: create button"
 
-  gac s add shadow -s button -bc
+  gac f update button style -s button -b this button was incompatible with a certain context -bc remove color props
+  ${greenColor("equals to:")}
   ${greenColor(
-    "equals to:"
-  )} git add -A && git commit -m "style(button)!: add shadow"
+    "|"
+  )} git add -A && git commit -m 'feat(button)!: update button style
+  ${greenColor("|")}
+  ${greenColor("|")} this button was incompatible with a certain context
+  ${greenColor("|")}
+  ${greenColor("|")} BREAKING CHANGE: remove color props'
 `
 
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
