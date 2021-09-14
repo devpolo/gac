@@ -1,17 +1,10 @@
 import { Argument } from "commander"
+
 import { Commander } from "./libs"
+import { TYPES } from "./constants"
+import { TChoice } from "./types"
 
 const program = new Commander().program
-
-const TYPES = [
-  { name: "chore", shortcut: "c" },
-  { name: "docs", shortcut: "d" },
-  { name: "feat", shortcut: "f" },
-  { name: "refactor", shortcut: "r" },
-  { name: "style", shortcut: "s" },
-  { name: "test", shortcut: "t" },
-  { name: "fix", shortcut: "x" },
-]
 
 const HELP_TEXT = `
 Types:
@@ -39,7 +32,7 @@ Examples:
   )} git add -A && git commit -m "style(button)!: add shadow"
 `
 
-const CHOICES = TYPES.map((type) => type.shortcut)
+const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
 program.addHelpText("after", HELP_TEXT)
 
@@ -67,7 +60,7 @@ program
     let breakingChange: string = ""
 
     TYPES.forEach((t) => {
-      if (type === t.shortcut) {
+      if (type === t.choice) {
         typeAndScope = t.name
       }
     })
