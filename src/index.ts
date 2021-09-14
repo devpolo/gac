@@ -1,12 +1,7 @@
-import { Command, Argument } from "commander"
-const program = new Command()
+import { Argument } from "commander"
+import { Commander } from "./libs"
 
-program.version("0.3")
-program.name("gac").usage("[type] [message...] [options] [options...]")
-program.configureHelp({
-  visibleArguments: (cmd) => [],
-  visibleOptions: (cmd) => [],
-})
+const program = new Commander().program
 
 const TYPES = [
   { name: "chore", shortcut: "c" },
