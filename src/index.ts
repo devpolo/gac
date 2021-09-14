@@ -1,17 +1,66 @@
 import { Command, Argument } from "commander"
 const program = new Command()
+
 program.version("0.3")
+program.name("gac").usage("[type] [message...] [options] [options...]")
+program.configureHelp({
+  visibleArguments: (cmd) => [],
+  visibleOptions: (cmd) => [],
+})
+
+const TYPES = [
+  { name: "chore", shortcut: "c" },
+  { name: "docs", shortcut: "d" },
+  { name: "feat", shortcut: "f" },
+  { name: "refactor", shortcut: "r" },
+  { name: "style", shortcut: "s" },
+  { name: "test", shortcut: "t" },
+  { name: "fix", shortcut: "x" },
+]
+
+const HELP_TEXT = `
+Types:
+  ${greenColor("c")}hore:                              c message
+  ${greenColor("d")}ocs:                               d message
+  ${greenColor("f")}eat:                               f message
+  ${greenColor("r")}efactor:                           r message
+  ${greenColor("s")}tyle:                              s message
+  ${greenColor("t")}est:                               t message
+  fi${greenColor("x")}:                                x message
+
+Options:
+  -s, --scope <scope>                 optional scope
+  -b, --body <body...>                optional body
+  -bc, --breaking-change [bc...]      optional breaking change
+  -h, --help                          display help for command
+
+Examples:
+  gac f create button 
+  ${greenColor("equals to:")} git add -A && git commit -m "feat: create button"
+
+  gac s add shadow -s button -bc
+  ${greenColor(
+    "equals to:"
+  )} git add -A && git commit -m "style(button)!: add shadow"
+`
+
+const CHOICES = TYPES.map((type) => type.shortcut)
+
+program.addHelpText("after", HELP_TEXT)
 
 program
-  .addArgument(new Argument("<type>", "type case").choices(["f", "x"]))
-  .argument("<descriptions...>")
-  .option("-s, --scope [scope]", "optional scope")
+  .addArgument(new Argument("[type]", "type case").choices(CHOICES))
+  .argument("[descriptions...]")
+  .option("-s, --scope <scope>", "optional scope")
   .option("-b, --body <body...>", "optional body")
   .option(
     "-bc, --breaking-change [breaking-change...]",
     "optional breaking change"
   )
   .action((type, descriptions) => {
+    if (!type) return printError("no type")
+    if (type && !descriptions?.length) return printError("no descriptions")
+
     const options = program.opts()
 
     console.log(options)
@@ -22,11 +71,11 @@ program
     let body: string = ""
     let breakingChange: string = ""
 
-    if (type === "f") {
-      typeAndScope = "feat"
-    } else if (type === "x") {
-      typeAndScope = "fix"
-    }
+    TYPES.forEach((t) => {
+      if (type === t.shortcut) {
+        typeAndScope = t.name
+      }
+    })
 
     if (Array.isArray(descriptions) && descriptions) {
       description = descriptions.join(" ")
@@ -56,5 +105,22 @@ program
 
     console.log(res)
   })
+
+function printError(str: string) {
+  process.stdout.write(`[ERROR]: \x1b[31m${str}\x1b[0m` + "\n")
+  return process.exit(1)
+}
+
+function greenColor(str: string) {
+  return `\x1b[32m${str}\x1b[0m`
+}
+
+program.configureOutput({
+  // Visibly override write routines as example!
+  // writeOut: (str) => process.stdout.write(`[OUTPUT] ${str}`),
+  writeErr: (str) => process.stdout.write(`[ERROR] ${str}`),
+  // Highlight errors in color.
+  outputError: (str, write) => write(printError(str)),
+})
 
 program.parse(process.argv)
