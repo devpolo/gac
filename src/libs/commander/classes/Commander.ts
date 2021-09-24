@@ -9,8 +9,11 @@ const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
 export class Commander extends Command {
   program: Command
+  options: any
+
   #actionType: string
   #actionDescriptions: string[]
+
   #type: string
   #scope: string
   #description: string
@@ -20,8 +23,11 @@ export class Commander extends Command {
   constructor() {
     super()
     this.program = new Command()
+    this.options = this.program.opts()
+
     this.#actionType = ""
     this.#actionDescriptions = []
+
     this.#type = ""
     this.#scope = ""
     this.#description = ""
@@ -64,6 +70,10 @@ export class Commander extends Command {
         this.#actionDescriptions = descriptions
 
         this.#onMissingActions()
+        this.#setType()
+        this.#setDescription()
+        this.#setScope()
+        this.#setBody()
 
         // const options = this.program.opts()
         // console.log(options)
@@ -72,17 +82,7 @@ export class Commander extends Command {
         // let res: string = ""
         // let body: string = ""
         // let breakingChange: string = ""
-        // TYPES.forEach((t) => {
-        //   if (type === t.choice) {
-        //     typeAndScope = t.name
-        //   }
-        // })
-        // if (Array.isArray(descriptions) && descriptions) {
-        //   description = descriptions.join(" ")
-        // }
-        // if (options?.scope) {
-        //   typeAndScope = typeAndScope + `(${options.scope})`
-        // }
+
         // if (options?.body) {
         //   if (Array.isArray(options.body) && options.body) {
         //     body = `\n\n${options.body.join(" ")}`
@@ -106,11 +106,44 @@ export class Commander extends Command {
     this.program.parse(process.argv)
   }
 
-  #onMissingActions() {
+  #onMissingActions(): void {
     if (!this.#actionType) return this.#onPrintError("no type")
 
     if (this.#actionType && !this.#actionDescriptions?.length)
       return this.#onPrintError("no descriptions")
+  }
+
+  #setType(): string {
+    TYPES.forEach((type) => {
+      if (this.#actionType === type.choice) {
+        this.#type = type.name
+      }
+    })
+    return this.#type
+  }
+
+  #setDescription(): string {
+    if (
+      Array.isArray(this.#actionDescriptions) &&
+      this.#actionDescriptions.length
+    ) {
+      this.#description = this.#actionDescriptions.join(" ")
+    }
+    return this.#description
+  }
+
+  #setScope(): string {
+    if (this.options?.scope) {
+      this.#scope = `(${this.options.scope})`
+    }
+    return this.#scope
+  }
+
+  #setBody(): string {
+    if (Array.isArray(this.options?.body) && this.options?.body?.length) {
+      this.#body = `\n\n${this.options.body.join(" ")}`
+    }
+    return this.#body
   }
 
   #onPrintError(str: string) {
