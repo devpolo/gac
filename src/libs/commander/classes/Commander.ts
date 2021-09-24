@@ -3,6 +3,8 @@ import { Command, Argument } from "commander"
 import { TChoice } from "../../../types"
 import { HELP_TEXT, TYPES } from "../../../constants"
 
+import packageConfig from "../../../../package.json"
+
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
 export class Commander extends Command {
@@ -15,8 +17,10 @@ export class Commander extends Command {
   }
 
   #init() {
-    this.program.version("0.3")
-    this.program.name("gac").usage("[type] [message...] [options] [options...]")
+    this.program.version(packageConfig.version)
+    this.program
+      .name(packageConfig.name)
+      .usage("[type] [message...] [options] [options...]")
     this.program.configureHelp({
       visibleArguments: (cmd: Command) => [],
       visibleOptions: (cmd: Command) => [],
