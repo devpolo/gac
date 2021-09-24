@@ -5,7 +5,7 @@
   "repository": "git@github.com:devpolo/gac.git",
   "author": "devpolo <paul@crussaire.com>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "start": "tsc & node .",

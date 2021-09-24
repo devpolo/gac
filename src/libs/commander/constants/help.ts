@@ -1,4 +1,4 @@
-import { ANSIColor } from "libs/color"
+import { ANSIColor } from "../../color/classes/ANSIColor"
 
 const color = new ANSIColor()
 

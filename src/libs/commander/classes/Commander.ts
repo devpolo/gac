@@ -13,7 +13,7 @@ export class Commander extends Command {
   constructor() {
     super()
     this.program = new Command()
-    this.init()
+    // this.init()
   }
 
   public init() {
