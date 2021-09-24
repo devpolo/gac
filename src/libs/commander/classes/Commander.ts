@@ -1,7 +1,7 @@
 import { Command, Argument } from "commander"
 
-import { TChoice } from "../../../types"
-import { HELP_TEXT, TYPES } from "../../../constants"
+import { TChoice } from "../types"
+import { HELP_TEXT, TYPES } from "../constants"
 
 import packageConfig from "../../../../package.json"
 

@@ -6,6 +6,7 @@ export type TTypeName =
   | "style"
   | "test"
   | "fix"
+
 export type TChoice = "c" | "d" | "f" | "r" | "s" | "t" | "x"
 
 export type TType = {

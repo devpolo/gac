@@ -1,14 +1,14 @@
-import { Argument } from "commander"
+// import { Argument } from "commander"
+import { Commander } from "libs/index"
 
-import { Commander } from "./libs"
-import { TYPES } from "./constants"
-import { TChoice } from "./types"
+// import { TYPES } from "./constants"
+// import { TChoice } from "./types"
 
 const commander = new Commander()
 const program = commander.program
 // const program = new Commander().program
 
-const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
+// const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
 // program
 //   .addArgument(new Argument("[type]", "type case").choices(CHOICES))
