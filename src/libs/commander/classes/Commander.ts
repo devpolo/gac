@@ -1,4 +1,5 @@
 import { Command } from "commander"
+import { HELP_TEXT } from "../../../constants"
 
 export class Commander extends Command {
   program: Command
@@ -13,5 +14,6 @@ export class Commander extends Command {
       visibleArguments: (cmd: Command) => [],
       visibleOptions: (cmd: Command) => [],
     })
+    this.program.addHelpText("after", HELP_TEXT)
   }
 }

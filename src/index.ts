@@ -6,42 +6,7 @@ import { TChoice } from "./types"
 
 const program = new Commander().program
 
-const HELP_TEXT = `
-Types:
-  ${greenColor("c")}hore:                              c message
-  ${greenColor("d")}ocs:                               d message
-  ${greenColor("f")}eat:                               f message
-  ${greenColor("r")}efactor:                           r message
-  ${greenColor("s")}tyle:                              s message
-  ${greenColor("t")}est:                               t message
-  fi${greenColor("x")}:                                x message
-
-Options:
-  -s, --scope <scope>                 optional scope
-  -b, --body <body...>                optional body
-  -bc, --breaking-change [bc...]      optional breaking change
-  -b, --reference <reference...>      optional reference
-  -h, --help                          display help for command
-
-Examples:
-  gac f create button 
-  ${greenColor("equals to:")} 
-  ${greenColor("|")} git add -A && git commit -m "feat: create button"
-
-  gac f update button style -s button -b this button was incompatible with a certain context -bc remove color props
-  ${greenColor("equals to:")}
-  ${greenColor(
-    "|"
-  )} git add -A && git commit -m 'feat(button)!: update button style
-  ${greenColor("|")}
-  ${greenColor("|")} this button was incompatible with a certain context
-  ${greenColor("|")}
-  ${greenColor("|")} BREAKING CHANGE: remove color props'
-`
-
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
-
-program.addHelpText("after", HELP_TEXT)
 
 program
   .addArgument(new Argument("[type]", "type case").choices(CHOICES))
