@@ -10,6 +10,7 @@ const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 export class Commander extends Command {
   program: Command
   options: any
+  output: string
 
   #actionType: string
   #actionDescriptions: string[]
@@ -24,6 +25,7 @@ export class Commander extends Command {
     super()
     this.program = new Command()
     this.options = this.program.opts()
+    this.output = ""
 
     this.#actionType = ""
     this.#actionDescriptions = []
@@ -75,14 +77,9 @@ export class Commander extends Command {
         this.#setScope()
         this.#setBody()
         this.#setBreakingChange()
+        this.#setOutput()
 
-        // const options = this.program.opts()
-        // console.log(options)
-        // let typeAndScope: string = ""
-        // let description: string = ""
-        // let res: string = ""
-        // let body: string = ""
-        // let breakingChange: string = ""
+        console.log(this.output)
 
         // res = `${typeAndScope}${
         //   options?.breakingChange ? "!" : ""
@@ -141,6 +138,15 @@ export class Commander extends Command {
       }
     }
     return this.#breakingChange
+  }
+
+  #setOutput(): string {
+    const exclamationPoint: string = this.options?.breakingChange ? "!" : ""
+
+    this.output = `${this.#type}${this.#scope}${exclamationPoint}: ${
+      this.#description
+    }`
+    return this.output
   }
 
   #isEmptyArray(item?: string[]) {
