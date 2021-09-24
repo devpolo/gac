@@ -13,10 +13,10 @@ export class Commander extends Command {
   constructor() {
     super()
     this.program = new Command()
-    this.#init()
+    this.init()
   }
 
-  #init() {
+  public init() {
     this.program.version(packageConfig.version)
     this.program
       .name(packageConfig.name)
@@ -27,6 +27,14 @@ export class Commander extends Command {
     })
 
     this.program.addHelpText("after", HELP_TEXT)
+
+    this.program.configureOutput({
+      // Visibly override write routines as example!
+      // writeOut: (str) => process.stdout.write(`[OUTPUT] ${str}`),
+      writeErr: (str) => process.stdout.write(`[ERROR] ${str}`),
+      // Highlight errors in color.
+      outputError: (str, write) => write(this.onPrintError(str)),
+    })
 
     this.program
       .addArgument(new Argument("[type]", "type case").choices(CHOICES))
@@ -39,13 +47,49 @@ export class Commander extends Command {
       )
       .option("-r, --reference <reference>", "optional reference")
       .action((type: string, descriptions: string[]) => {
-        this.test()
-        this.onPrintError("test")
+        console.log("3")
+        // if (!type) return this.onPrintError("no type")
+        // if (type && !descriptions?.length)
+        //   return this.onPrintError("no descriptions")
+        // const options = this.program.opts()
+        // console.log(options)
+        // let typeAndScope: string = ""
+        // let description: string = ""
+        // let res: string = ""
+        // let body: string = ""
+        // let breakingChange: string = ""
+        // TYPES.forEach((t) => {
+        //   if (type === t.choice) {
+        //     typeAndScope = t.name
+        //   }
+        // })
+        // if (Array.isArray(descriptions) && descriptions) {
+        //   description = descriptions.join(" ")
+        // }
+        // if (options?.scope) {
+        //   typeAndScope = typeAndScope + `(${options.scope})`
+        // }
+        // if (options?.body) {
+        //   if (Array.isArray(options.body) && options.body) {
+        //     body = `\n\n${options.body.join(" ")}`
+        //   }
+        // }
+        // if (options?.breakingChange) {
+        //   if (Array.isArray(options.breakingChange) && options.breakingChange) {
+        //     breakingChange = `\n\nBREAKING CHANGE: ${options.breakingChange.join(
+        //       " "
+        //     )}`
+        //   }
+        // }
+        // res = `${typeAndScope}${
+        //   options?.breakingChange ? "!" : ""
+        // }: ${description}${body}${breakingChange}${
+        //   options?.reference ? "\n\n#" + options?.reference : ""
+        // }`
+        // console.log(res)
       })
-  }
 
-  public test() {
-    console.log("object")
+    this.program.parse(process.argv)
   }
 
   onPrintError(str: string) {
