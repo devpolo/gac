@@ -4,7 +4,9 @@ import { Commander } from "./libs"
 import { TYPES } from "./constants"
 import { TChoice } from "./types"
 
-const program = new Commander().program
+const commander = new Commander()
+const program = commander.program
+// const program = new Commander().program
 
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 

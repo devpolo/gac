@@ -11,7 +11,10 @@ export class Commander extends Command {
   constructor() {
     super()
     this.program = new Command()
+    this.#init()
+  }
 
+  #init() {
     this.program.version("0.3")
     this.program.name("gac").usage("[type] [message...] [options] [options...]")
     this.program.configureHelp({
@@ -31,12 +34,18 @@ export class Commander extends Command {
         "optional breaking change"
       )
       .option("-r, --reference <reference>", "optional reference")
-      .action((type, descriptions) => {
+      .action((type: string, descriptions: string[]) => {
         this.test()
+        this.onPrintError("test")
       })
   }
 
-  test() {
+  public test() {
     console.log("object")
+  }
+
+  onPrintError(str: string) {
+    process.stdout.write(`[ERROR]: \x1b[31m${str}\x1b[0m` + "\n")
+    return process.exit(1)
   }
 }
