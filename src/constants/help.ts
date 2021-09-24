@@ -1,8 +1,8 @@
-import { ANSIColor } from "../libs"
+import { ANSIColor } from "../libs/color/classes/ANSIColor"
 
 const color = new ANSIColor()
 
-export const HELP_TEXT = `
+export const HELP_TEXT: string = `
 Types:
   ${color.green("c")}hore:                              c message
   ${color.green("d")}ocs:                               d message

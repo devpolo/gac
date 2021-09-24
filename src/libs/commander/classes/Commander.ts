@@ -1,5 +1,9 @@
-import { Command } from "commander"
-import { HELP_TEXT } from "../../../constants"
+import { Command, Argument } from "commander"
+
+import { TChoice } from "../../../types"
+import { HELP_TEXT, TYPES } from "../../../constants"
+
+const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
 export class Commander extends Command {
   program: Command
@@ -14,6 +18,25 @@ export class Commander extends Command {
       visibleArguments: (cmd: Command) => [],
       visibleOptions: (cmd: Command) => [],
     })
+
     this.program.addHelpText("after", HELP_TEXT)
+
+    this.program
+      .addArgument(new Argument("[type]", "type case").choices(CHOICES))
+      .argument("[descriptions...]")
+      .option("-s, --scope <scope>", "optional scope")
+      .option("-b, --body <body...>", "optional body")
+      .option(
+        "-bc, --breaking-change [breaking-change...]",
+        "optional breaking change"
+      )
+      .option("-r, --reference <reference>", "optional reference")
+      .action((type, descriptions) => {
+        this.test()
+      })
+  }
+
+  test() {
+    console.log("object")
   }
 }
