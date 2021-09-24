@@ -74,6 +74,7 @@ export class Commander extends Command {
         this.#setDescription()
         this.#setScope()
         this.#setBody()
+        this.#setBreakingChange()
 
         // const options = this.program.opts()
         // console.log(options)
@@ -83,18 +84,6 @@ export class Commander extends Command {
         // let body: string = ""
         // let breakingChange: string = ""
 
-        // if (options?.body) {
-        //   if (Array.isArray(options.body) && options.body) {
-        //     body = `\n\n${options.body.join(" ")}`
-        //   }
-        // }
-        // if (options?.breakingChange) {
-        //   if (Array.isArray(options.breakingChange) && options.breakingChange) {
-        //     breakingChange = `\n\nBREAKING CHANGE: ${options.breakingChange.join(
-        //       " "
-        //     )}`
-        //   }
-        // }
         // res = `${typeAndScope}${
         //   options?.breakingChange ? "!" : ""
         // }: ${description}${body}${breakingChange}${
@@ -144,6 +133,20 @@ export class Commander extends Command {
       this.#body = `\n\n${this.options.body.join(" ")}`
     }
     return this.#body
+  }
+
+  #setBreakingChange(): string {
+    if (this.options?.breakingChange) {
+      if (
+        Array.isArray(this.options?.breakingChange) &&
+        this.options?.breakingChange
+      ) {
+        this.#breakingChange = `\n\nBREAKING CHANGE: ${this.options.breakingChange.join(
+          " "
+        )}`
+      }
+    }
+    return this.#breakingChange
   }
 
   #onPrintError(str: string) {
