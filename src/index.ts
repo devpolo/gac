@@ -74,10 +74,6 @@ function printError(str: string) {
   return process.exit(1)
 }
 
-function greenColor(str: string) {
-  return `\x1b[32m${str}\x1b[0m`
-}
-
 program.configureOutput({
   // Visibly override write routines as example!
   // writeOut: (str) => process.stdout.write(`[OUTPUT] ${str}`),
