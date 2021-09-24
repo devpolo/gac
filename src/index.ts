@@ -1,5 +1,6 @@
 // import { Argument } from "commander"
-import { Commander } from "libs/index"
+
+import { Commander } from "libs/commander"
 
 // import { TYPES } from "./constants"
 // import { TChoice } from "./types"
