@@ -9,11 +9,24 @@ const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
 export class Commander extends Command {
   program: Command
+  #actionType: string
+  #actionDescriptions: string[]
+  #type: string
+  #scope: string
+  #description: string
+  #body: string
+  #breakingChange: string
 
   constructor() {
     super()
     this.program = new Command()
-    // this.init()
+    this.#actionType = ""
+    this.#actionDescriptions = []
+    this.#type = ""
+    this.#scope = ""
+    this.#description = ""
+    this.#body = ""
+    this.#breakingChange = ""
   }
 
   public init() {
@@ -33,7 +46,7 @@ export class Commander extends Command {
       // writeOut: (str) => process.stdout.write(`[OUTPUT] ${str}`),
       writeErr: (str) => process.stdout.write(`[ERROR] ${str}`),
       // Highlight errors in color.
-      outputError: (str, write) => write(this.onPrintError(str)),
+      outputError: (str, write) => write(this.#onPrintError(str)),
     })
 
     this.program
@@ -47,10 +60,11 @@ export class Commander extends Command {
       )
       .option("-r, --reference <reference>", "optional reference")
       .action((type: string, descriptions: string[]) => {
-        console.log("3")
-        // if (!type) return this.onPrintError("no type")
-        // if (type && !descriptions?.length)
-        //   return this.onPrintError("no descriptions")
+        this.#actionType = type
+        this.#actionDescriptions = descriptions
+
+        this.#onMissingActions()
+
         // const options = this.program.opts()
         // console.log(options)
         // let typeAndScope: string = ""
@@ -92,7 +106,14 @@ export class Commander extends Command {
     this.program.parse(process.argv)
   }
 
-  onPrintError(str: string) {
+  #onMissingActions() {
+    if (!this.#actionType) return this.#onPrintError("no type")
+
+    if (this.#actionType && !this.#actionDescriptions?.length)
+      return this.#onPrintError("no descriptions")
+  }
+
+  #onPrintError(str: string) {
     process.stdout.write(`[ERROR]: \x1b[31m${str}\x1b[0m` + "\n")
     return process.exit(1)
   }
