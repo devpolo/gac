@@ -112,10 +112,7 @@ export class Commander extends Command {
   }
 
   #setDescription(): string {
-    if (
-      Array.isArray(this.#actionDescriptions) &&
-      this.#actionDescriptions.length
-    ) {
+    if (!this.#isEmptyArray(this.#actionDescriptions)) {
       this.#description = this.#actionDescriptions.join(" ")
     }
     return this.#description
@@ -129,7 +126,7 @@ export class Commander extends Command {
   }
 
   #setBody(): string {
-    if (Array.isArray(this.options?.body) && this.options?.body?.length) {
+    if (!this.#isEmptyArray(this.options?.body)) {
       this.#body = `\n\n${this.options.body.join(" ")}`
     }
     return this.#body
@@ -137,16 +134,17 @@ export class Commander extends Command {
 
   #setBreakingChange(): string {
     if (this.options?.breakingChange) {
-      if (
-        Array.isArray(this.options?.breakingChange) &&
-        this.options?.breakingChange
-      ) {
+      if (!this.#isEmptyArray(this.options?.breakingChange)) {
         this.#breakingChange = `\n\nBREAKING CHANGE: ${this.options.breakingChange.join(
           " "
         )}`
       }
     }
     return this.#breakingChange
+  }
+
+  #isEmptyArray(item?: string[]) {
+    return !Array.isArray(item) || !item?.length
   }
 
   #onPrintError(str: string) {
