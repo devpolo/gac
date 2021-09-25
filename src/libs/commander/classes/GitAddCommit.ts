@@ -1,14 +1,14 @@
-import shell from "shelljs"
 import { Command, Argument } from "commander"
 
 import { TChoice } from "../types"
 import { HELP_TEXT, TYPES } from "../constants"
+import { Shell } from "../../shelljs"
 
 import packageConfig from "../../../../package.json"
 
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
-export class GitAddCommit {
+export class GitAddCommit extends Shell {
   program: Command
   options: any
   output: string
@@ -24,6 +24,7 @@ export class GitAddCommit {
   #reference: string
 
   constructor() {
+    super()
     this.program = new Command()
     this.options = this.program.opts()
     this.output = ""
@@ -158,17 +159,8 @@ export class GitAddCommit {
   }
 
   #commit() {
-    if (!shell.which("git")) {
-      shell.echo("Sorry, this script requires git")
-      shell.exit(1)
-    }
-
-    const git = shell.exec(`git commit -am "${this.output}"`)
-
-    if (git.code !== 0) {
-      shell.echo("Error: Git commit failed")
-      shell.exit(1)
-    }
+    this.which("git")
+    this.exec(`git commit -am "${this.output}"`)
   }
 
   #isEmptyArray(item?: string[]) {
