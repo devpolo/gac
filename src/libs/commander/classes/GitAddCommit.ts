@@ -160,7 +160,8 @@ export class GitAddCommit extends Shell {
 
   #commit() {
     this.which("git")
-    this.exec(`git commit -am "${this.output}"`)
+    this.exec(`git add -A`)
+    this.exec(`git commit -m "${this.output}"`)
   }
 
   #isEmptyArray(item?: string[]) {
