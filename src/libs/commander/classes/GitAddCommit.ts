@@ -78,8 +78,9 @@ export class GitAddCommit {
         this.#setScope()
         this.#setBody()
         this.#setBreakingChange()
-        this.#setOutput()
         this.#setReference()
+
+        this.#setOutput()
 
         console.log(this.output)
 
@@ -155,7 +156,7 @@ export class GitAddCommit {
 
     this.output = `${this.#type}${this.#scope}${exclamationPoint}: ${
       this.#description
-    }${this.#body}${this.#breakingChange}`
+    }${this.#body}${this.#breakingChange}${this.#reference}`
 
     return this.output
   }
