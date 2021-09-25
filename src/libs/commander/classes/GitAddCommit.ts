@@ -83,13 +83,6 @@ export class GitAddCommit {
         this.#setOutput()
 
         console.log(this.output)
-
-        // res = `${typeAndScope}${
-        //   options?.breakingChange ? "!" : ""
-        // }: ${description}${body}${breakingChange}${
-        //   options?.reference ? "\n\n#" + options?.reference : ""
-        // }`
-        // console.log(res)
       })
 
     this.program.parse(process.argv)
