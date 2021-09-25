@@ -1,1 +1,1 @@
-export * from "./Commander"
+export * from "./GitAddCommit"

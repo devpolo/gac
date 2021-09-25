@@ -7,7 +7,7 @@ import packageConfig from "../../../../package.json"
 
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
-export class Commander extends Command {
+export class GitAddCommit extends Command {
   program: Command
   options: any
   output: string

@@ -1,4 +1,4 @@
-import { Commander } from "./libs/commander"
+import { GitAddCommit } from "./libs/commander"
 
-const commander = new Commander()
-commander.init()
+const gac = new GitAddCommit()
+gac.init()
