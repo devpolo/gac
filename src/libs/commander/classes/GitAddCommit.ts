@@ -38,7 +38,7 @@ export class GitAddCommit {
     this.#reference = ""
   }
 
-  public init() {
+  public execute() {
     this.program.version(packageConfig.version)
     this.program
       .name(packageConfig.name)
