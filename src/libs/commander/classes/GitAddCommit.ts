@@ -144,7 +144,8 @@ export class GitAddCommit {
 
     this.output = `${this.#type}${this.#scope}${exclamationPoint}: ${
       this.#description
-    }`
+    }${this.#body}${this.#breakingChange}`
+
     return this.output
   }
 
