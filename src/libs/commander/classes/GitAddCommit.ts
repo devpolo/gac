@@ -1,3 +1,4 @@
+import shell from "shelljs"
 import { Command, Argument } from "commander"
 
 import { TChoice } from "../types"
@@ -82,6 +83,8 @@ export class GitAddCommit {
 
         this.#setOutput()
 
+        this.#commit()
+
         console.log(this.output)
       })
 
@@ -152,6 +155,20 @@ export class GitAddCommit {
     }${this.#body}${this.#breakingChange}${this.#reference}`
 
     return this.output
+  }
+
+  #commit() {
+    if (!shell.which("git")) {
+      shell.echo("Sorry, this script requires git")
+      shell.exit(1)
+    }
+
+    const git = shell.exec(`git commit -am "${this.output}"`)
+
+    if (git.code !== 0) {
+      shell.echo("Error: Git commit failed")
+      shell.exit(1)
+    }
   }
 
   #isEmptyArray(item?: string[]) {
