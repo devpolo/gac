@@ -142,7 +142,13 @@ export class GitAddCommit {
     return this.#breakingChange
   }
 
-  #setReference() {}
+  #setReference(): string {
+    if (this.options?.reference) {
+      this.#reference = `\n\n#${this.options.reference}`
+    }
+
+    return this.#reference
+  }
 
   #setOutput(): string {
     const exclamationPoint: string = this.options?.breakingChange ? "!" : ""
