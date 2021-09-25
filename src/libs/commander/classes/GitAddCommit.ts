@@ -20,6 +20,7 @@ export class GitAddCommit {
   #description: string
   #body: string
   #breakingChange: string
+  #reference: string
 
   constructor() {
     this.program = new Command()
@@ -34,6 +35,7 @@ export class GitAddCommit {
     this.#description = ""
     this.#body = ""
     this.#breakingChange = ""
+    this.#reference = ""
   }
 
   public init() {
@@ -77,6 +79,7 @@ export class GitAddCommit {
         this.#setBody()
         this.#setBreakingChange()
         this.#setOutput()
+        this.#setReference()
 
         console.log(this.output)
 
@@ -138,6 +141,8 @@ export class GitAddCommit {
     }
     return this.#breakingChange
   }
+
+  #setReference() {}
 
   #setOutput(): string {
     const exclamationPoint: string = this.options?.breakingChange ? "!" : ""
