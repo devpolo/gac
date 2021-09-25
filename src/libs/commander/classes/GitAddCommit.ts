@@ -70,7 +70,7 @@ export class GitAddCommit {
         this.#actionType = type
         this.#actionDescriptions = descriptions
 
-        this.#onMissingActions()
+        this.#onMissingActionParams()
         this.#setType()
         this.#setDescription()
         this.#setScope()
@@ -91,7 +91,7 @@ export class GitAddCommit {
     this.program.parse(process.argv)
   }
 
-  #onMissingActions(): void {
+  #onMissingActionParams(): void {
     if (!this.#actionType) return this.#onPrintError("no type")
 
     if (this.#actionType && !this.#actionDescriptions?.length)
