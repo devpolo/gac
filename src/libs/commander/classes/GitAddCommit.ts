@@ -11,7 +11,7 @@ const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 export class GitAddCommit extends Shell {
   program: Command
   options: any
-  output: string
+  message: string
 
   #actionType: string
   #actionDescriptions: string[]
@@ -27,7 +27,7 @@ export class GitAddCommit extends Shell {
     super()
     this.program = new Command()
     this.options = this.program.opts()
-    this.output = ""
+    this.message = ""
 
     this.#actionType = ""
     this.#actionDescriptions = []
@@ -86,7 +86,7 @@ export class GitAddCommit extends Shell {
 
         this.#commit()
 
-        console.log(this.output)
+        console.log(this.message)
       })
 
     this.program.parse(process.argv)
@@ -151,17 +151,17 @@ export class GitAddCommit extends Shell {
   #setOutput(): string {
     const exclamationPoint: string = this.options?.breakingChange ? "!" : ""
 
-    this.output = `${this.#type}${this.#scope}${exclamationPoint}: ${
+    this.message = `${this.#type}${this.#scope}${exclamationPoint}: ${
       this.#description
     }${this.#body}${this.#breakingChange}${this.#reference}`
 
-    return this.output
+    return this.message
   }
 
   #commit() {
     this.which("git")
     this.exec(`git add -A`)
-    this.exec(`git commit -m "${this.output}"`)
+    this.exec(`git commit -m "${this.message}"`)
   }
 
   #isEmptyArray(item?: string[]) {
