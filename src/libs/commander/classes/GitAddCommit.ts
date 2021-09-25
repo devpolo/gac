@@ -7,7 +7,7 @@ import packageConfig from "../../../../package.json"
 
 const CHOICES: TChoice[] = TYPES.map((type) => type.choice)
 
-export class GitAddCommit extends Command {
+export class GitAddCommit {
   program: Command
   options: any
   output: string
@@ -22,7 +22,6 @@ export class GitAddCommit extends Command {
   #breakingChange: string
 
   constructor() {
-    super()
     this.program = new Command()
     this.options = this.program.opts()
     this.output = ""
