@@ -17,6 +17,8 @@ jobs:
           node-version: "14"
       - name: Build
         run: |
+          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/src
           npm install -g pkg
           npm install tsc
           npm build
