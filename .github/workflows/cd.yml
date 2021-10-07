@@ -32,7 +32,7 @@ jobs:
       - name: Set SHA
         id: shasum
         run: |
-          echo ::set-output name=sha::"$(shasum -a 256 releases/gac-macos-x64.tar.gz | awk '{printf $1}')"
+          echo ::set-output name=sha::"$(shasum -a 256 release/gac-macos-x64.tar.gz | awk '{printf $1}')"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -49,6 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: releases/gac-macos-x64.tar.gz
+          asset_path: release/gac-macos-x64.tar.gz
           asset_name: gac-macos-x64.tar.gz
           asset_content_type: application/gzip
