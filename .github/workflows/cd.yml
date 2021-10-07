@@ -20,10 +20,10 @@ jobs:
           npm install -g pkg
           npm install -g typescript
           npm install
-      - name: Release
+      - name: Release Package
         run: |
           npm run build
-          npm run release
+          npm run package
       - name: Get version
         id: get_version
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}

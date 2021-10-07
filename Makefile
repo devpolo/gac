@@ -1,4 +1,4 @@
-.PHONY: all alias
+.PHONY: all alias package
 .DEFAULT_GOAL = all
 
 CURRENT_DIR=$(shell pwd)
@@ -24,3 +24,6 @@ all: ## execute a fully gac command
 
 alias: ## for dev purpose, print temporary gac alias
 	@echo alias gac=\"$(GAC)\"
+
+package: ## build a single executable
+	pkg $(GAC) --targets node14-macos-x64 --output ./release/gac
