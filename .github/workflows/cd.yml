@@ -17,11 +17,11 @@ jobs:
           node-version: "14"
       - name: Build
         run: |
-          ls ${{ github.workspace }}/src
+          ls ./src
           npm install -g pkg
           npm install tsc
           npm build
-          pkg dist/src/index.js
+          pkg ./dist/src/index.js
       - name: Null Action
         run: echo *** hello ***
       - name: Get version
