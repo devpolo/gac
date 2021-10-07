@@ -1,8 +1,10 @@
-.PHONY: all alias package
+.PHONY: all alias package archive release
 .DEFAULT_GOAL = all
 
 CURRENT_DIR=$(shell pwd)
-GAC=node $(CURRENT_DIR)/dist/src/index.js
+DIST_DIR=$(CURRENT_DIR)/dist/src/index.js
+RELEASE=./release/gac
+GAC=node $(DIST_DIR)
 DESC?=update button style
 SCOPE?=button
 BODY?=this button was uncompatible with a certain context
@@ -26,4 +28,11 @@ alias: ## for dev purpose, print temporary gac alias
 	@echo alias gac=\"$(GAC)\"
 
 package: ## build a single executable
-	pkg $(GAC) --targets node14-macos-x64 --output ./release/gac
+	pkg $(DIST_DIR) --targets node14-macos-x64 --output $(RELEASE)
+
+archive: ## archive executable
+	tar -cvzf $(RELEASE)-macos-x64.tar.gz $(RELEASE)
+
+release: ## package and archive executable
+	make package
+	make archive
