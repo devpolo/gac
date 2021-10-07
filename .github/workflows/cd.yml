@@ -20,7 +20,7 @@ jobs:
           ls ./src
           npm install -g pkg
           npm install tsc
-          npm build
+          npm run build
           pkg ./dist/src/index.js
       - name: Null Action
         run: echo *** hello ***
