@@ -93,7 +93,9 @@ export class GitAddCommit extends Shell {
   }
 
   #onMissingActionParams(): void {
-    if (!this.#actionType) return this.#onPrintError("no type")
+    if (!this.#actionType) {
+      this.program.showHelpAfterError()
+    }
 
     if (this.#actionType && !this.#actionDescriptions?.length)
       return this.#onPrintError("no descriptions")
