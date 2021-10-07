@@ -18,14 +18,16 @@ jobs:
       - name: Install
         run: |
           npm install -g pkg
-          npm install tsc
+          npm install -g typescript
           npm install
-      - name: Build
+      - name: Release
         run: |
           npm run build
-          pkg ./dist/src/index.js
-      - name: Null Action
-        run: echo *** hello ***
+          npm run release
       - name: Get version
         id: get_version
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
+      - name: Set SHA
+        id: shasum
+        run: |
+          echo ::set-output name=sha::"$(shasum -a 256 ./releases/gitui-mac.tar.gz | awk '{printf $1}')"

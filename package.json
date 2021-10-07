@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc & node .",
-    "dev": "tsc -w & nodemon ."
+    "dev": "tsc -w & nodemon .",
+    "package": "pkg ./dist/src/index.js --targets node14-macos-x64 --output ./release/gac"
   },
   "dependencies": {
     "commander": "^8.2.0",
