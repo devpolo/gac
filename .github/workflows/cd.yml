@@ -22,6 +22,7 @@ jobs:
           npm install
       - name: Release Package
         run: |
+          pwd
           make release
       - name: Get version
         id: get_version
@@ -30,3 +31,13 @@ jobs:
         id: shasum
         run: |
           echo ::set-output name=sha::"$(shasum -a 256 ./releases/gac-macos-x64.tar.gz | awk '{printf $1}')"
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTIONS_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: true
