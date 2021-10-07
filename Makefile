@@ -2,7 +2,7 @@
 .DEFAULT_GOAL = all
 
 CURRENT_DIR=$(shell pwd)
-DIST_DIR=$(CURRENT_DIR)/dist/src/index.js
+DIST_DIR=./dist/src/index.js
 RELEASE=./release/gac
 GAC=node $(DIST_DIR)
 DESC?=update button style
