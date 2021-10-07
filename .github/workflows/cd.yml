@@ -29,4 +29,4 @@ jobs:
       - name: Set SHA
         id: shasum
         run: |
-          echo ::set-output name=sha::"$(shasum -a 256 ./releases/gitui-mac.tar.gz | awk '{printf $1}')"
+          echo ::set-output name=sha::"$(shasum -a 256 ./releases/gac-macos-x64.tar.gz | awk '{printf $1}')"
