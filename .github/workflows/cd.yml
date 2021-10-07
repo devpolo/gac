@@ -42,7 +42,7 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: true
-      - name: Upload Release Asset
+      - name: Upload Release To HomeBrew
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
