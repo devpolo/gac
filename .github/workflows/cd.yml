@@ -22,8 +22,9 @@ jobs:
           npm install
       - name: Release Package
         run: |
-          pkg dist/src/index.js --targets node14-macos-x64 --output release/gac
-          tar -cvzf release/gac-macos-x64.tar.gz release/gac
+          npm run build
+          npm run package
+          npm run archive
       - name: Get version
         id: get_version
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}

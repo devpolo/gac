@@ -10,7 +10,7 @@
     "build": "tsc",
     "start": "tsc & node .",
     "dev": "tsc -w & nodemon .",
-    "package": "pkg ./dist/src/index.js --targets node14-macos-x64 --output ./release/gac",
+    "package": "pkg dist/src/index.js --targets node14-macos-x64 --output release/gac",
     "archive": "tar -cvzf release/gac-macos-x64.tar.gz release/gac"
   },
   "dependencies": {
