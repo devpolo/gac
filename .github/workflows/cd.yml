@@ -15,12 +15,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: Build
+      - name: Install
         run: |
-          ls ./src
           npm install -g pkg
           npm install tsc
           npm install
+      - name: Build
+        run: |
           npm run build
           pkg ./dist/src/index.js
       - name: Null Action
