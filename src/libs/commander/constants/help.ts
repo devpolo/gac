@@ -22,15 +22,15 @@ Options:
 Examples:
   gac f create button 
   ${color.green("equals to:")} 
-  ${color.green("|")} git add -A && git commit -m "feat: create button"
+  ${color.green(">")} git add -A && git commit -m "feat: create button"
 
   gac f update button style -s button -b this button was incompatible with a certain context -bc remove color props
   ${color.green("equals to:")}
   ${color.green(
-    "|"
+    ">"
   )} git add -A && git commit -m 'feat(button)!: update button style
-  ${color.green("|")}
-  ${color.green("|")} this button was incompatible with a certain context
-  ${color.green("|")}
-  ${color.green("|")} BREAKING CHANGE: remove color props'
+  ${color.green(">")}
+  ${color.green(">")} this button was incompatible with a certain context
+  ${color.green(">")}
+  ${color.green(">")} BREAKING CHANGE: remove color props'
 `
