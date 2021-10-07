@@ -22,8 +22,7 @@ jobs:
           npm install
       - name: Release Package
         run: |
-          npm run build
-          npm run package
+          make release
       - name: Get version
         id: get_version
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
