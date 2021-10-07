@@ -4,6 +4,7 @@ on:
     branches:
       - next
       - next-2
+      - next-3
   workflow_dispatch:
 
 jobs:
