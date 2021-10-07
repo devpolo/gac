@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - next
+      - next-2
   workflow_dispatch:
 
 jobs:
