@@ -2,7 +2,7 @@
 .DEFAULT_GOAL = all
 
 CURRENT_DIR=$(shell pwd)
-GAC=node $(CURRENT_DIR)/dist/index.js
+GAC=node $(CURRENT_DIR)/dist/src/index.js
 DESC?=update button style
 SCOPE?=button
 BODY?=this button was uncompatible with a certain context
