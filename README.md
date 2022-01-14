@@ -49,38 +49,29 @@ Work the same as [macOS](#macos). Use `~/.profile` file instead.
 gac
 # print available semantics
 
-gac b <your message>
-# 🐛 BUG FIX: <your message>
-
 gac c <your message>
-# 📦 CHORE: <your message>
+# git add -A && git commit -m "chore: <your message>"
 
 gac d <your message>
-# 📖 DOCS: <your message>
+# git add -A && git commit -m "docs: <your message>"
 
 gac f <your message>
-# ✅ FEAT: <your message>
-
-gac n <your message>
-# 🚀 NEW RELEASE: <your message>
-
-gac i <your message>
-# 👌 IMPROVE: <your message>
+# git add -A && git commit -m "feat: <your message>"
 
 gac r <your message>
-# 🪚 REFACTOR: <your message>
+# git add -A && git commit -m "refactor: <your message>"
 
 gac s <your message>
-# 🎨 STYLE: <your message>
+# git add -A && git commit -m "style: <your message>"
 
 gac t <your message>
-# 🧪 TEST: <your message>
+# git add -A && git commit -m "test: <your message>"
 
-gac w <your message>
-# 🛠 WORKING ON: <your message>
+gac x <your message>
+# git add -A && git commit -m "fix: <your message>"
 
 gac <your message>
-# <your message>
+# git add -A && git commit -m "<your message>"
 ```
 
 ## Thanks
