@@ -80,8 +80,6 @@ gac <your message>
 
 [Inspired by the Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
-[How to Open Source Like a Pro, Ben Awad's video](https://youtu.be/MT6M_sqAuZo?t=467)
-
 [Graphical charter inspired by Ory](https://github.com/ory)
 
 [Header icon licence](https://icons8.com/license)
