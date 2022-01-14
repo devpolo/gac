@@ -26,7 +26,7 @@ git commit -m "feat: call to action button"
 1. You need a `~/.zshrc` file
 2. Open or create it: `vim ~/.zshrc`
 3. Enter insert mode: `i`
-4. Past the entire [`gac.sh`](gac.sh) file (or a [variant](variant)) at the end of your `~/.zshrc` file
+4. Past the entire [`gac.sh`](gac.sh) file (or a [variant](variant/shell)) at the end of your `~/.zshrc` file
 5. Exit vim: `:wq`
 6. Restart your terminal
 7. Enjoy faster and formatted `git add` and `git commit` actions
@@ -41,7 +41,7 @@ Work the same as [macOS](#macos). Use `~/.profile` file instead.
 2. Give access to external script: `Set-ExecutionPolicy Unrestricted`
 3. Go to Powershell Home Directory `cd $PSHOME` or `cd C:\Windows\System32\WindowsPowerShell\v1.0`
 4. Open explorer in $PSHOME `start .`
-5. Copy `Profile.ps1` file or paste the `Profile.ps1` contents if it already exists.
+5. Copy `Profile.ps1` file (or a [variant](variant/powershell)) or paste the `Profile.ps1` contents if it already exists.
 
 ## Available commands
 
