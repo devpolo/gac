@@ -2,16 +2,16 @@
 
 # Format and faster your git commit
 
-A customizable bash function to **format** and **faster** your `git commit -am "message"` command.
+A customizable bash function to **format** and **faster** your `git add -A && git commit -m "message"` command.
 
 ## Example
 
 ```bash
-gac n final version
+gac f call to action button
 
 # equals to:
 git add -A
-git commit -m "🚀 NEW RELEASE: final version"
+git commit -m "feat: call to action button"
 ```
 
 ## Contributions
