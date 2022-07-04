@@ -81,5 +81,3 @@ gac <your message>
 [Inspired by the Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#type)
 
 [Graphical charter inspired by Ory](https://github.com/ory)
-
-[Header icon licence](https://icons8.com/license)
